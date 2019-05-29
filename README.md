@@ -1,7 +1,7 @@
 # Automatic-Weather-Station
 PS-1 Project, Indian Meteorological Department, Pune
 <h2> Wind Vane </h2>
-</strong>Manufactured by the department itself</strong>
+<strong> Sensor manufactured by the department itself</strong>
 
 Non-RS232 sensor, operates on TTL and can therefore be directly interfaced to the Arduino board via Analog Pins.
 
