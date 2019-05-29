@@ -1,7 +1,8 @@
 # Automatic-Weather-Station
 PS-1 Project, Indian Meteorological Department, Pune
 <h2> Wind Vane </h2>
-####Manufactured by the department itself
+</strong>Manufactured by the department itself</strong>
+
 Non-RS232 sensor. Can be directly interfaced to analog pin of arduino.
 
 				N(180)
@@ -19,7 +20,7 @@ Analog values received by connecting the sensor in a voltage divider circuit wit
 Only two pins present can be connected in any order.
 
 <h2> Temperature and Humidity Probe </h2>
-####Sensor Name: RHT 175	
+<strong>Sensor Name: RHT 175 </strong>	
 
 Connections according to colour.
 >BLUE ---> TEMPERATURE ----> A1
