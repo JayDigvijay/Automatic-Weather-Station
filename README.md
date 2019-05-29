@@ -27,8 +27,8 @@ Also operates on TTL Logic, but Analog values obtained need to be scaled down to
 Connections according to colour.
 > BLUE ---> TEMPERATURE ----> A1
 
-> PINK ----> HUMIDITY ---->A2
+> PINK ----> HUMIDITY ----> A2
 
-> WHITE ----> POWER
+> WHITE ----> 5V
 
-> THICK BLACK , BROWN, VIOLET ----> GROUND </list>
+> THICK BLACK , BROWN, VIOLET ----> GND
