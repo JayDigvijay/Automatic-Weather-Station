@@ -21,7 +21,7 @@ Only two pins present can be connected in any order.
 SENSOR NAME: RHT 175	
 
 Connections according to colour.
-BLUE ---> TEMPERATURE ----> A1
+<list>BLUE ---> TEMPERATURE ----> A1
 PINK ----> HUMIDITY ---->A2
 WHITE ----> POWER
-THICK BLACK , BROWN, VIOLET ----> GROUND
+THICK BLACK , BROWN, VIOLET ----> GROUND </list>
