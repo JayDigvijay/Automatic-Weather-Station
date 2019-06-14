@@ -2,8 +2,8 @@ float val1 = 0;
 float val2 = 0;
 float temp = 0;
 float hum = 0;
-const int temperature = A1;       //Analog pin used for temperature
-const int humidity = A2;          //Analog pin used for Humidity  
+const int temperature = A2;       //Analog pin used for temperature
+const int humidity = A1;          //Analog pin used for Humidity  
 
 void setup() {
   // put your setup code here, to run once:
