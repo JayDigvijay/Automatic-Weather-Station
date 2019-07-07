@@ -1,8 +1,8 @@
-/* Windvane Variables*/
-const int pinWindDir = A0;            // Analog input pin for Windvane
+/* Windwane Variables*/
+const int pinWindDir = A0;            // Analog input pin for Windwane
 int val1 = 0;
-float Vin = 5;             // Input voltage (Windvane)
-float Vout = 0;            // Vout default value (Windvane)
+float Vin = 5;             // Input voltage (Windwane)
+float Vout = 0;            // Vout default value (Windwane)
 float Rref = 9999;          // Reference resistor's value in ohms (you can give this value in kiloohms or megaohms - the resistance of the tested resistor will be given in the same units)
 float R = 0;               // Tested resistors default value
 float theta = 0;
@@ -62,13 +62,22 @@ void setup() {
 
   pinMode(pinRainfall, INPUT);
   attachInterrupt(0, rain_count, RISING);
+  pinMode(22,OUTPUT);
+  pinMode(23,OUTPUT);
+  pinMode(52,OUTPUT);
+  pinMode(53,OUTPUT);
+  digitalWrite(22,HIGH);
+  digitalWrite(23,HIGH);
+  digitalWrite(52,LOW);
+  digitalWrite(53,LOW);
+  
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  
+    Serial.println(millis());
     while(Serial2.available()>0){
-    Serial2.flush();
+    
     int inChar = Serial2.read();
     if(inChar != ' '){
       inwString += (char)inChar;
@@ -87,6 +96,7 @@ void loop() {
     
     }
   }
+ 
   delay(100);
     val1 = analogRead(pinWindDir);
     Vout = (Vin * val1) / 1023;    // Convert Vout to volts
@@ -99,7 +109,7 @@ void loop() {
     Serial.print(theta);
     Serial.println(" °");
     
-    delay(150);
+    delay(150); 
 
     while(Serial3.available()>0){
       int inChar = Serial3.read();
@@ -123,7 +133,7 @@ void loop() {
       }
     }
   
-    val2 = analogRead(pinTemp);
+   val2 = analogRead(pinTemp);
     val3 = analogRead(pinHumidity);
     temp = (val2*5/1023)*100-40;    //Temperature value mapped to -40 to +60 celsuis
     hum = (val3*5/1023)*100;        //Humidity value mapped to 0 - 100%
@@ -136,12 +146,13 @@ void loop() {
     Serial.print(hum);
     Serial.println(" %");
     
-    delay(100);
+    delay(100); 
 
+  Serial2flush();
     
       Serial.print("Rain count = ");
       Serial.println(rainCount);
-      delay(1000);    
+      delay(600);    
   Serial.println("");
   
     
@@ -150,6 +161,7 @@ void loop() {
     sumOneNorthComp += northComp;
     eastComp = windSpeed * sin(theta);
     sumOneEastComp += eastComp;
+     
 
     /*  if(i == 55){
         oneTemperature = sumTemperature/55;
@@ -176,7 +188,7 @@ void loop() {
         Serial.print(atan(oneNorthComp / oneEastComp));
         Serial.println(" °");
         
-      }*/
+      }*/ 
   }
   
 
@@ -221,3 +233,12 @@ void rain_count(){
   rainCount++;
 }
 
+void Serial2flush()
+{ while(Serial2.available())
+        {char t = Serial2.read();}
+}
+
+void Serial3flush()
+{ while(Serial3.available())
+        {Serial3.read();}
+}         
