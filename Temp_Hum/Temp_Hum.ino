@@ -16,10 +16,10 @@ void loop() {
   val2 = analogRead(humidity);
   temp = (val1*5/1023)*100-40;    //Temperature value mapped to -40 to +60 celsuis
   hum = (val2*5/1023)*100;        //Humidity value mapped to 0 - 100%
-  Serial.println("Temperature = ");
+  Serial.print("Temperature = ");
   Serial.println(temp);
   Serial.print("Humidity = ");
   Serial.print(hum);
-  Serial.print('%');
+  Serial.println('%');
   delay(1000);
 }
